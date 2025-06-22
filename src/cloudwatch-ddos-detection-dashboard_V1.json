@@ -1,0 +1,74 @@
+{
+    "widgets": [
+        {
+            "height": 2,
+            "width": 24,
+            "y": 0,
+            "x": 0,
+            "type": "alarm",
+            "properties": {
+                "alarms": [
+                    "arn:aws:cloudwatch:us-east-1:249645693565:alarm:MODEL_QUALITY_PRECISION",
+                    "arn:aws:cloudwatch:us-east-1:249645693565:alarm:MODEL_QUALITY_ACCURACY",
+                    "arn:aws:cloudwatch:us-east-1:249645693565:alarm:MODEL_QUALITY_F1",
+                    "arn:aws:cloudwatch:us-east-1:249645693565:alarm:MODEL_QUALITY_F2",
+                    "arn:aws:cloudwatch:us-east-1:249645693565:alarm:MODEL_QUALITY_AUC"
+                ],
+                "title": "Alarms"
+            }
+        },
+        {
+            "height": 6,
+            "width": 6,
+            "y": 7,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [ "/aws/sagemaker/Endpoints", "CPUUtilization", "EndpointName", "sm-DDOS-detection-model-monitor-2025-06-15-2139", "VariantName", "AllTraffic" ]
+                ],
+                "region": "us-east-1"
+            }
+        },
+        {
+            "height": 6,
+            "width": 6,
+            "y": 7,
+            "x": 7,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [ "/aws/sagemaker/ProcessingJobs", "DiskUtilization", "Host", "model-quality-monitoring-202506152300-38e9e2127da292121d78ecc5/algo-1" ],
+                    [ ".", "MemoryUtilization", ".", "." ],
+                    [ ".", "CPUUtilization", ".", "." ]
+                ],
+                "region": "us-east-1"
+            }
+        },
+        {
+            "height": 5,
+            "width": 21,
+            "y": 2,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "DDoSDetection/BatchInference", "F1Score", { "region": "us-east-1" } ],
+                    [ ".", "Accuracy", { "region": "us-east-1" } ],
+                    [ ".", "Precision", { "region": "us-east-1" } ],
+                    [ ".", "Recall", { "region": "us-east-1" } ]
+                ],
+                "sparkline": false,
+                "view": "singleValue",
+                "region": "us-east-1",
+                "period": 300,
+                "stat": "Minimum",
+                "title": "Model Performance"
+            }
+        }
+    ]
+}
