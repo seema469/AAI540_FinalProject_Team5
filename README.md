@@ -13,3 +13,6 @@ The model aims to provide real-time detection and reduce the burden on security 
 * **model_evaluation_and_deployment**: evaluates the performance of the heuristic and gradient boosting models.
 * **monitoring.ipynb**: implements data and infrastructure monitoring, showing key metrics on a Cloudwatch dashboard.
 * **ci-cd-pipeline.ipynb**: implements a CI/CD pipeline for automated model deployment.
+* **ci-cd-pipeline-batch-inference.ipynb**: Implements a CI/CD pipeline for batch inference, evaluation and   conditional model registration.
+* **cloudwatch-dashboard.ipynb**: Sets up a CloudWatch dashboard.
+* **cloudwatch-ddos-detection-dashboard.json**: Predefined JSON template for a CloudWatch dashboard monitoring CPU, memory, disk, and model quality metrics and alarms.
